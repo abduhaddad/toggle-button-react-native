@@ -97,8 +97,8 @@ export default class ToggleSwitch extends React.Component {
     circleColor: "white",
   };
 
-  offsetX = new Animated.Value(0);
   dimensions = ToggleSwitch.calculateDimensions(this.props.size);
+  offsetX = new Animated.Value(this.props.isOn ? (this.dimensions.width - this.dimensions.translateX) : 0);
 
   createToggleSwitchStyle = () => [
     {
